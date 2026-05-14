@@ -69,7 +69,8 @@
 
 Из-за того, что плагин в своей работе использует сторонние библиотеки, настройки по факту разделены на две независимые части: **плагина** и **библиотек**. Библиотеки Oracle изначально снабжены своей встроенной системой настроек. Плагин же предлагает свою отдельную систему настроек. В случаях когда настройки плагина и библиотек пересекаются, приоритет плагина выше.  
 
-> [!TIP] **О значении `skip`**  
+> [!TIP]
+> **О значении `skip`**  
 > В настройках плагина часто встречается значение `skip`. Забегая вперёд, поясним: если выбран `skip`, плагин не влияет на настройку, а передаёт управление встроенной системе библиотек. При любых других значениях плагин берёт управление настройкой на себя.  
 
 ### Настройки библиотек
@@ -106,7 +107,8 @@
     </tr>
     <tr>
         <td><tt>keepinmemory</tt></td>
-        <td><tt>0<br>1 <small>(по умолчанию)</small></tt></td>
+        <td><tt>0</tt><br>
+            <tt>1</tt> <sup>(по умолчанию)</sup></td>
         <td colspan=2>— не выгружать библиотеки Oracle из памяти после первого использования. Это уменьшает время загрузки документа, но увеличивает потребляемую память.</td>
     </tr>
     <tr>
@@ -151,7 +153,7 @@
 
 В секции `clipboard` расположены настройки копирования в буфер обмена при просмотре документов. Эти настройки пересекаются с аналогичными встроенными настройками библиотек, доступными из меню ПКМ → Options → Clipboard, однако приоритет у настроек плагина выше.
 
-_Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.10 SCCID\_TOCLIPBOARD_.
+<sup>_Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.10 SCCID\_TOCLIPBOARD_.</sup>
 
 Эта секция настроек появилась в версии плагина 4.0.0.7.
 
@@ -163,98 +165,98 @@ _Описание в Oracle Outside In Viewer Developer's Guide: раздел A.
     </tr>
     <tr>
         <td><tt>ascii</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать текст в неюникодной кодировке, поддерживаемой ОС</td>
         <td rowspan=8>
-            <table>
-                <tr>
-                    <th>Значение</th>
-                    <th>Описание</th>
-                </tr>
-                <tr>
-                    <td><tt>skip</tt></td>
-                    <td>передать управление настройкой во встроенную систему библиотек</td>
-                </tr>
-                <tr>
-                    <td><tt>on</tt></td>
-                    <td>включить возможность копирования указанного формата</td>
-                </tr>
-                <tr>
-                    <td><tt>off</tt></td>
-                    <td>выключить возможность копирования указанного формата</td>
-                </tr>
-            </table>
+            <ul>Описание значений:<br><br>
+                <li><tt>skip</tt><br>
+                    передать управление настройкой во встроенную систему библиотек
+                <li><tt>on</tt><br>
+                    включить возможность копирования указанного формата
+                <li><tt>off</tt><br>
+                    выключить возможность копирования указанного формата
+            </ul>
         <br><br>Всем этим ключам (особенно <tt>unicode</tt>) рекомендуется присвоить значение <tt>on</tt>.</td>
     </tr>
     <tr>
         <td><tt>rtf</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать текст с форматированием (Rich Text Format)</td>
     </tr>
     <tr>
         <td><tt>unicode</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать текст в кодировке Юникод.
-            <br><br><i>Примечание: во встроенных настройках библиотек этот параметр по умолчанию был выключен, что приводило к появлению «крякозябр» при копировании не-юникодных символов.</i></td>
+            <br><br><sup><i>Примечание: во встроенных настройках библиотек этот параметр по умолчанию был выключен, что приводило к появлению «крякозябр» при копировании не-юникодных символов.</i></sup></td>
     </tr>
     <tr>
         <td><tt>bitmap</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать растровые изображения в формате Windows Bitmap</td>
     </tr>
     <tr>
         <td><tt>windib</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать изображения в формате аппаратно-независимого растра (Windows Device Independent Bitmap)</td>
     </tr>
     <tr>
         <td><tt>metafile</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать векторные изображения в формате Windows Metafile</td>
     </tr>
     <tr>
         <td><tt>palette</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать цвет в формате Windows Palette</td>
     </tr>
     <tr>
         <td><tt>dragdrop</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>on</tt><br>
+            <tt>off</tt></td>
         <td>— копировать с помощью перетаскивания (drag-and-drop).
-            <br><br><small><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.6 <tt>SCCID_OLEFLAGS</tt>.</i></small></td>
+            <br><br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.6 <tt>SCCID_OLEFLAGS</tt>.</i></sup></td>
     </tr>
     <tr>
         <td><tt>spreadsheet</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>rtf<br>tabs<br>optimizedtabs</tt></td>
-        <td colspan=2 rowspan=2>— формат копирования ячеек из электронных таблиц и баз данных.<br>
-            <table>
-                <tr>
-                    <th>Значение</th>
-                    <th>Описание</th>
-                </tr>
-                <tr>
-                    <td><tt>skip</tt></td>
-                    <td>передать управление настройкой во встроенную систему библиотек</td>
-                </tr>
-                <tr>
-                    <td><tt>rtf</tt></td>
-                    <td>копировать с текстовым и табличным форматированием (Rich Text Format)</td>
-                </tr>
-                <tr>
-                    <td><tt>tabs</tt></td>
-                    <td>копировать как обычный текст, разделители ячеек заменять символом табуляции</td>
-                </tr>
-                <tr>
-                    <td><tt>optimizedtabs</tt></td>
-                    <td>как <tt>tabs</tt>, только пропускать пустые ячейки</td>
-                </tr>
-            </table>
-        <small><i>Описание в Oracle Outside In Viewer Developer's Guide: разделы A.4.8 <tt>SCCID_SSCLIPBOARD</tt> и A.4.1 <tt>SCCID_DBCLIPBOARD</tt>.</i></small>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>rtf</tt><br>
+            <tt>tabs</tt><br>
+            <tt>optimizedtabs</tt></td>
+        <td colspan=2 rowspan=2>— формат копирования ячеек из электронных таблиц и баз данных.<br><br>
+            <ul>Описание значений:<br><br>
+                <li><tt>skip</tt><br>
+                    передать управление настройкой во встроенную систему библиотек
+                <li><tt>rtf</tt><br>
+                    копировать с текстовым и табличным форматированием (Rich Text Format)
+                <li><tt>tabs</tt><br>
+                    копировать как обычный текст, разделители ячеек заменять символом табуляции
+                <li><tt>optimizedtabs</tt><br>
+                    как <tt>tabs</tt>, только пропускать пустые ячейки
+            </ul>
+        <br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: разделы A.4.8 <tt>SCCID_SSCLIPBOARD</tt> и A.4.1 <tt>SCCID_DBCLIPBOARD</tt>.</i></sup>
         </td>
     </tr>
     <tr>
         <td><tt>database</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>on<br>off</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>rtf</tt><br>
+            <tt>tabs</tt><br>
+            <tt>optimizedtabs</tt></td>
     </tr>
 </table>
 
@@ -263,17 +265,19 @@ _Описание в Oracle Outside In Viewer Developer's Guide: раздел A.
 
 В секции `viewer` расположены настройки отображения форматированных текстовых документов, HTML и EMAIL. Эти настройки пересекаются с аналогичными встроенными настройками библиотек, доступными из меню ПКМ → View и Size, однако приоритет у настроек плагина выше.
 
-> [!IMPORTANT] Общее пояснение  
+> [!IMPORTANT]
+> **Общее пояснение**  
 > При просмотре документа настройки плагина и библиотек взаимодействуют следующим образом.  
 >  
 > Если выбрано значение `skip`. Открываем документ, вызываем меню ПКМ и в группах View и Size выбираем режим отображения. Этот режим применяется к текущему документу, а также ко всем последующим документам. Так работает система настроек библиотек.
 >  
 > Если выбрано любое другое значение, кроме `skip`. При открытии документа к нему применяется режим отображения, указанный в настройках плагина. При этом в окне просмотра работает переключение режимов из меню ПКМ → View/Size. Выбранный в меню ПКМ режим действует до закрытия текущего документа или до переключения на просмотр следующего документа. При открытии следующего документа настройки из меню ПКМ сбрасываются, а отображение изменяется согласно настройке плагина.
 
-> [!CAUTION] Внимание  
+> [!WARNING]
+> **Внимание**  
 > Из-за ошибки в библиотеках Oracle, настройки из этой секции считываются плагином только при инициализации. Поэтому, если вы отредактировали одну из них, перезапустите Total Commander для применения изменений.
 
-_Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.2 SCCID\_WPDISPLAYMODE / SCCID\_HTMLDISPLAYMODE / SCCID\_EMAILDISPLAYMODE_.
+<sup>_Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.2 SCCID\_WPDISPLAYMODE / SCCID\_HTMLDISPLAYMODE / SCCID\_EMAILDISPLAYMODE_.</sup>
 
 Эта секция настроек появилась в версии плагина 4.0.1.0.
 
@@ -285,8 +289,12 @@ _Описание в Oracle Outside In Viewer Developer's Guide: раздел A.
     </tr>
     <tr>
         <td><tt>wpdisplaymode</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>draft<br>normal<br>preview<br>weblayout</tt></td>
-        <td>режим отображения документов текстовых процессоров</td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>draft</tt><br>
+            <tt>normal</tt><br>
+            <tt>preview</tt><br>
+            <tt>weblayout</tt></td>
+        <td>режим отображения форматированных текстовых документов</td>
         <td rowspan=3>
             <table>
                 <tr>
@@ -327,18 +335,29 @@ _Описание в Oracle Outside In Viewer Developer's Guide: раздел A.
     </tr>
     <tr>
         <td><tt>htmldisplaymode</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>draft<br>normal<br>preview<br>weblayout</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>draft</tt><br>
+            <tt>normal</tt><br>
+            <tt>preview</tt><br>
+            <tt>weblayout</tt></td>
         <td>режим отображения документов HTML</td>
     </tr>
     <tr>
         <td><tt>emaildisplaymode</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>draft<br>normal<br>preview<br>weblayout</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>draft</tt><br>
+            <tt>normal</tt><br>
+            <tt>preview</tt><br>
+            <tt>weblayout</tt></td>
         <td>режим отображения документов EMAIL</td>
     </tr>
     <tr>
         <td><tt>webprevwpfitmode</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>original<br>width<br>window</tt></td>
-        <td>для документов Word</td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>original</tt><br>
+            <tt>width</tt><br>
+            <tt>window</tt></td>
+        <td>для форматированных текстовых документов</td>
         <td rowspan=3>— настройки размера страницы в режимах <tt>preview</tt> и <tt>weblayout</tt>.
             <table>
                 <tr>
@@ -363,17 +382,23 @@ _Описание в Oracle Outside In Viewer Developer's Guide: раздел A.
                         <br>в режиме <tt>weblayout</tt> — размер страницы по ширине окна.</td>
                 </tr>
             </table>
-          <br><small><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.3 <tt>SCCID_WPFITMODE</tt> / <tt>SCCID_HTMLFITMODE</tt> / <tt>SCCID_EMAILFITMODE</tt>.</i></small>
+          <br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.3 <tt>SCCID_WPFITMODE</tt> / <tt>SCCID_HTMLFITMODE</tt> / <tt>SCCID_EMAILFITMODE</tt>.</i></sup>
         </td>
     </tr>
     <tr>
         <td><tt>webprevhtmlfitmode</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>original<br>width<br>window</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>original</tt><br>
+            <tt>width</tt><br>
+            <tt>window</tt></td>
         <td>для документов HTML</td>
     </tr>
     <tr>
         <td><tt>webprevemailfitmode</tt></td>
-        <td><tt>skip <small>(по умолчанию)</small><br>original<br>width<br>window</tt></td>
+        <td><tt>skip</tt> <sup>(по умолчанию)</sup><br>
+            <tt>original</tt><br>
+            <tt>width</tt><br>
+            <tt>window</tt></td>
         <td>для документов EMAIL</td>
     </tr>
 </table>
