@@ -180,7 +180,7 @@
                     выключить возможность копирования указанного формата
             </ul>
         <br><br>Всем этим ключам (особенно <tt>unicode</tt>) рекомендуется присвоить значение <tt>on</tt>.
-        <br><br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.10 SCCID_TOCLIPBOARD.</i></sup></td>
+        <br><br><sub><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.10 SCCID_TOCLIPBOARD.</i></sub></td>
     </tr>
     <tr>
         <td><tt>rtf</tt></td>
@@ -231,7 +231,7 @@
             <tt>on</tt><br>
             <tt>off</tt></td>
         <td>— копировать с помощью перетаскивания (drag-and-drop).
-            <br><br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.6 <tt>SCCID_OLEFLAGS</tt>.</i></sup></td>
+            <br><br><sub><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.10.6 <tt>SCCID_OLEFLAGS</tt>.</i></sub></td>
     </tr>
     <tr>
         <td><tt>spreadsheet</tt></td>
@@ -250,7 +250,7 @@
                 <li><tt>optimizedtabs</tt><br>
                     как <tt>tabs</tt>, только пропускать пустые ячейки
             </ul>
-        <br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: разделы A.4.8 <tt>SCCID_SSCLIPBOARD</tt> и A.4.1 <tt>SCCID_DBCLIPBOARD</tt>.</i></sup>
+        <br><sub><i>Описание в Oracle Outside In Viewer Developer's Guide: разделы A.4.8 <tt>SCCID_SSCLIPBOARD</tt> и A.4.1 <tt>SCCID_DBCLIPBOARD</tt>.</i></sub>
         </td>
     </tr>
     <tr>
@@ -318,7 +318,7 @@
                         <li>нет разбивки на страницы (как в браузере);
                         <li>размер страницы регулируется ключами <tt>fitmode</tt> <i>(см. ниже)</i></ul>
             </ul>
-            <br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.2 <tt>SCCID_WPDISPLAYMODE</tt> / <tt>SCCID_HTMLDISPLAYMODE</tt> / <tt>SCCID_EMAILDISPLAYMODE</tt>.</i></sup>
+            <br><sub><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.2 <tt>SCCID_WPDISPLAYMODE</tt> / <tt>SCCID_HTMLDISPLAYMODE</tt> / <tt>SCCID_EMAILDISPLAYMODE</tt>.</i></sub>
         </td>
     </tr>
     <tr>
@@ -358,7 +358,7 @@
                     <ul><li>в режиме <tt>preview</tt> — размер страницы по ширине окна;
                         <li>в режиме <tt>weblayout</tt> — размер страницы по ширине окна.</ul>
             </ul>
-          <br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.3 <tt>SCCID_WPFITMODE</tt> / <tt>SCCID_HTMLFITMODE</tt> / <tt>SCCID_EMAILFITMODE</tt>.</i></sup>
+          <br><sub><i>Описание в Oracle Outside In Viewer Developer's Guide: раздел A.7.3 <tt>SCCID_WPFITMODE</tt> / <tt>SCCID_HTMLFITMODE</tt> / <tt>SCCID_EMAILFITMODE</tt>.</i></sub>
         </td>
     </tr>
     <tr>
@@ -387,30 +387,31 @@
             <tt>width</tt><br>
             <tt>stretch</tt></td>
         <td>для векторных изображений
-            <br><br>Замечание:
-            <br>Некоторые контейнеры изображений, такие как Macintosh Pict, могут содержать как растровую, так и векторную графику. Библиотека Outside In Technology почему-то относит такие файлы к векторным.</td>
-        <td rowspan=2>— настройки растягивания изображений применительно к окну просмотра.
+            <br><br>
+            <sub>Замечание ⚠️<br>
+            Некоторые форматы, такие как Macintosh Pict, устроены как контейнеры, т.е. могут содержать и векторную, и растровую графику. Однако, библиотеки Oracle рассматривают такие только как векторные.</sub></td>
+        <td rowspan=2>— настройки растягивания изображений относительно окна просмотра.
             <ul><br>Описание значений:<br><br>
                 <li><tt>skip</tt><br>
-                    передать управление настройкой во встроенную систему библиотек
+                    передать управление настройкой во встроенную систему библиотек.
                 <li><tt>best</tt><br>
-                    <ul><li>если размер окна меньше размера изображения, подгнать изображение под размер окна;
-                        <li>если размер окна больше размера изображения, отображать в исходном размере.</ul>
+                    <ul><li>если размер изображения больше размера окна , подогнать изображение под размер окна;
+                        <li>если размер изображения меньше размера окна, отображать в исходном размере.</ul>
                 <li><tt>original</tt><br>
-                    изображение отображается на экране по одному пикселу на каждую единицу в системе координат изображения для векторного представления или пиксел в пиксел для растрового; размер окна не учитывается.
+                    векторная графика отображается в размере один пиксел на единицу своей системы координат, растровая — пиксел в пиксел; размер окна при этом игнорируется.
                 <li><tt>window</tt><br>
-                    изображение растягивается так, чтобы заполнить наибольшую часть окна, соотношение сторон при этом сохраняется.
+                    изображение растягивается так, чтобы заполнить наибольшую часть окна, но с учётом соотношения сторон.
                 <li><tt>height</tt><br>
                     изображение растягивается так, чтобы его высота уместилась в высоту окна, но при этом ширина может не уместиться.
                 <li><tt>width</tt><br>
                     изображение растягивается так, чтобы его ширина уместилась в ширину окна, но при этом высота может не уместиться.
                 <li><tt>stretch</tt><br>
-                    <ul><li>изображение растягивается так, чтобы заполнить окно, соотношение сторон при этом НЕ сохраняется;
-                        <li>**хотя этот параметр предусмотрен для растровой графики, по факту он не производит никакого эффекта.</ul>
+                    <ul><li>изображение растягивается так, чтобы заполнить окно, соотношение сторон при этом игнорируется;
+                        <li><sup>⚠️</sup>хотя этот параметр предусмотрен для растровой графики, по факту он не производит на неё никакого действия.</ul>
                 <li><tt>imagesize</tt><br>
                     <i>только для растровой графики</i>: масштабировать до размера изображения
             </ul>
-          <br><sup><i>Описание в Oracle Outside In Viewer Developer's Guide: разделы A.5.11 <tt>SCCID_VECFITMODE</tt>, A.5.4 <tt>SCCID_BMPFITMODE</tt>.</i></sup>
+          <br><sub><i>Описание в Oracle Outside In Viewer Developer's Guide: разделы A.5.11 <tt>SCCID_VECFITMODE</tt>, A.5.4 <tt>SCCID_BMPFITMODE</tt>.</i></sub>
         </td>
     </tr>
     <tr>
@@ -421,7 +422,7 @@
             <tt>window</tt><br>
             <tt>height</tt><br>
             <tt>width</tt><br>
-            <tt>stretch</tt>**<br>
+            <tt>stretch</tt><sup>⚠️</sup><br>
             <tt>imagesize</tt></td>
         <td>для растровых изображений</td>
     </tr>
